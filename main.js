@@ -33,6 +33,8 @@ const pecas = {
         "velocidade": -2
     }
 }
+const alterarcor = document.querySelectorAll("[data-alterar]")
+const fotorobo = document.querySelector(".robo")
 
 controle.forEach( (elemento) => {
     elemento.addEventListener("click", (evento) => {
@@ -41,16 +43,16 @@ controle.forEach( (elemento) => {
     })
 })
 
-
 function manipulaDados(operacao, controle) {
     const peca = controle.querySelector("[data-contador]")
 
-    if(operacao === "-") {
-        peca.value = parseInt(peca.value) - 1
-    } else {
+    if(operacao === "+") {
         peca.value = parseInt(peca.value) + 1
+    } else {
+        peca.value = parseInt(peca.value) - 1
     }
 }
+
 
 function atualizaEstatisticas(peca, operacao) {
 
@@ -63,5 +65,22 @@ function atualizaEstatisticas(peca, operacao) {
             elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica]
         })
     }
-    
+
 }
+
+alterarcor.forEach( (elemento) => {
+    elemento.addEventListener("click", (evento) => {
+        mudacor(evento.target.dataset.alterar )
+    })
+})
+
+function mudacor(mudacor) {
+    fotorobo.src = "img/Robotron 2000 - " + mudacor + "/Robotron 2000 - " + mudacor + ".png";
+}
+
+
+// function trocaImagem(cor) {
+//     document.querySelector(".robo").src = "img\\Robotron 2000 - " + cor + "\\Robotron 2000 - " + cor + ".png";
+//   }
+                                     
+// console.log(trocaImagem)

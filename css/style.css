@@ -37,12 +37,50 @@ main {
     position: relative;
 }
 
+.box {
+    background: rgba(0,0,0,0.6);
+    clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px), 0 30px, 30px 0);
+    border-left: 5px solid var(--main-cinza);
+    height: 80%;
+}
+
+.robotron {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.botoes{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.alterar {
+    max-width: 15.5%;
+    height: 100%;
+    font-size: 16px;
+    color: #FFFFFF;
+    background-color: rgba(0,0,0,0.6);
+    border-bottom: none;
+    border-top: none;
+    border-right: none;
+    border-left: 5px solid var(--main-cinza);
+    clip-path: polygon(calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px, 6px 0);
+}
+
+.alterar:hover{
+    background-color: rgb(221, 233, 229);
+}
+
+
 .robo {
+    max-height: 85%;
+    display: flex;
+    position: relative;
     height: 110%;
     z-index: 1;
-    position: absolute;
-    left: -20%;
-    top: -5%;
+
 }
 
 .titulo {
@@ -51,18 +89,11 @@ main {
     font-size: 130px;
     position: absolute;
     bottom: 7rem;
-    left: -3rem;
+    left: 0.4rem;
     line-height: 0.8;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     color: rgba(255,255,255,0.8)
-}
-
-.box {
-    background: rgba(0,0,0,0.6);
-    clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px), 0 30px, 30px 0);
-    border-left: 5px solid var(--main-cinza);
-    height: 80%;
 }
 
 /****************************** Equipamentos *****/
@@ -147,6 +178,7 @@ main {
     background: var(--main-preto);
     color: var(--main-branco)
 }
+
 
 
 
